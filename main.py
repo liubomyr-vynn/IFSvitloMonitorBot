@@ -47,7 +47,7 @@ async def fetch_schedule(message: types.Message, target_date_str: str, display_d
                     try:
                         data = await response.json()
                     except Exception as json_err:
-                        logger.error(Stops parsing error: {json_err})
+                        logger.error(f"Помилка парсингу JSON: {json_err}")
                         await message.answer("⚠️ Помилка обробки даних від сервера.")
                         return
 
